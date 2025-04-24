@@ -1,0 +1,246 @@
+/* Printable report styles - only visible when printing */
+@media print {
+  /* Basic page setup */
+  @page {
+    size: A4;
+    margin: 0.5in;
+  }
+
+  /* Hide everything in the main app */
+  body > div#root > div:not(.printable-report-container) {
+    display: none !important;
+  }
+  
+  /* Show the printable report */
+  .printable-report-container {
+    display: block !important;
+    background: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}
+
+/* Report container - hidden in screen mode */
+.printable-report-container {
+  display: none;
+}
+
+.printable-report {
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Report header styling */
+.report-header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+.report-header h1 {
+  font-size: 24pt;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.report-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11pt;
+  color: #555;
+}
+
+.report-meta p {
+  margin: 0;
+}
+
+/* Patient section */
+.patient-section {
+  margin-bottom: 30px;
+}
+
+.patient-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.patient-header h2 {
+  font-size: 16pt;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Patient demographics */
+.patient-demographics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ccc;
+  font-size: 11pt;
+}
+
+.patient-demographics p {
+  margin: 0;
+}
+
+.patient-demographics strong {
+  color: #444;
+}
+
+/* Status badge */
+.status-badge {
+  font-size: 11pt;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-weight: normal;
+}
+
+.status-badge.referral {
+  background-color: #ffdddd;
+  color: #cc0000;
+}
+
+.status-badge.regular {
+  background-color: #ddffdd;
+  color: #007700;
+}
+
+/* Report grid layout */
+.report-grid {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 15px;
+}
+
+/* Medical information section */
+.medical-info {
+  margin-bottom: 15px;
+}
+
+.medical-info h3, .summary-section h3 {
+  font-size: 14pt;
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Information table */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.info-table th, .info-table td {
+  padding: 5px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.info-table th {
+  width: 40%;
+  font-weight: bold;
+  color: #444;
+}
+
+.compare-cell {
+  width: 20%;
+  text-align: right;
+  color: #666;
+  font-size: 10pt;
+}
+
+/* Status indicators */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 5px 0 8px;
+}
+
+.status-text {
+  color: #555;
+  font-size: 9pt;
+  font-style: italic;
+}
+
+/* Summary section */
+.summary-section {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.key-metrics {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.metric-item {
+  text-align: center;
+  padding: 5px;
+}
+
+.metric-label {
+  display: block;
+  font-size: 10pt;
+  color: #666;
+}
+
+.metric-value {
+  display: block;
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 3px 0;
+}
+
+.metric-unit, .metric-status {
+  display: block;
+  font-size: 9pt;
+  color: #666;
+}
+
+/* Assessment section */
+.assessment-section {
+  border-top: 1px dashed #ddd;
+  padding-top: 10px;
+}
+
+.assessment-section h4 {
+  font-size: 12pt;
+  margin: 0 0 8px 0;
+}
+
+.assessment-section p {
+  margin: 0 0 8px 0;
+  font-size: 10pt;
+  line-height: 1.4;
+}
+
+/* Report footer */
+.report-footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 10pt;
+  color: #666;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+/* Page break utility */
+.page-break {
+  page-break-after: always;
+  height: 0;
+  margin: 0;
+  padding: 0;
+} 

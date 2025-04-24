@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+client/node_modules/
+
+# Build outputs
+client/build/
+
+# Environment variables
+.env
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE and editor folders
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Sample data
+sample-patients.csv 

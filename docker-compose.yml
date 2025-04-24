@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=feeding-dashboard
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/feeding-dashboard --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+  # Application service (backend only)
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    container_name: feeding-dashboard
+    restart: always
+    ports:
+      - "80:5000"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      - MONGO_URI=mongodb://admin:password@mongodb:27017/feeding-dashboard?authSource=admin
+      - PORT=5000
+      - NODE_ENV=production
+      - JWT_SECRET=changethissecretinproduction
+    volumes:
+      - ./client/build:/app/client/build
+    networks:
+      - app-network
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:5000/api/system/health || exit 1
+      interval: 20s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local 

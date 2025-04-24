@@ -1,0 +1,30 @@
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy only what we need for the server
+COPY package*.json ./
+COPY server.js .env ./
+COPY routes/ ./routes/
+COPY models/ ./models/
+COPY middleware/ ./middleware/
+COPY services/ ./services/
+COPY utils/ ./utils/
+COPY config.js ./
+
+# Install server dependencies
+RUN npm ci --only=production
+
+# Create client build directory
+RUN mkdir -p client/build
+
+# Serve static files
+ENV NODE_ENV=production
+ENV PORT=5000
+
+# Expose the port
+EXPOSE 5000
+
+# Start the application
+CMD ["node", "server.js"] 
