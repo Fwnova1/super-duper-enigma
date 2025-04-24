@@ -1,6 +1,0 @@
-encounterId,bmi,end_tidal_co2,feed_vol,feed_vol_adm,fio2,fio2_ratio,insp_time,oxygen_flow_rate,peep,pip,resp_rate,sip,tidal_vol,tidal_vol_actual,tidal_vol_kg,tidal_vol_spon,referral,notes
-SPECIAL001,28.5,45.0,5500,400.0,60,220.0,1.4,6.0,9.0,26.0,22.0,19.0,360,340.0,5.5,290.0,true,Massively increased feeding volume
-SPECIAL002,32.0,36.0,1300,300.0,45,260.0,1.2,5.0,8.0,24.0,18.0,17.0,380,360.0,6.0,320.0,false,Decreased end-tidal CO2 despite high BMI
-SPECIAL003,25.0,53.0,1200,950.0,50,240.0,1.3,5.5,8.5,25.0,20.0,18.0,370,350.0,5.8,310.0,,Abnormally high end-tidal CO2
-SPECIAL004,29.0,43.0,1100,400.0,80,180.0,1.5,8.0,10.0,30.0,25.0,21.0,330,310.0,5.0,250.0,,Unusually high FiO2
-SPECIAL005,22.0,38.0,1250,1100.0,30,300.0,0.8,2.5,5.0,25.0,35.0,16.0,430,410.0,7.0,380.0,true,Abnormally high respiratory rate 

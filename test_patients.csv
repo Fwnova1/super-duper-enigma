@@ -1,5 +1,0 @@
-encounterId,bmi,end_tidal_co2,feed_vol,feed_vol_adm,fio2,fio2_ratio,insp_time,oxygen_flow_rate,peep,pip,resp_rate,sip,tidal_vol,tidal_vol_actual,tidal_vol_kg,tidal_vol_spon,referral
-TEST001,32.5,48.2,1500,320.5,65,180.5,1.4,7.5,9.5,28.2,24.5,19.8,350,330.2,5.5,220.1,true
-TEST002,21.6,38.1,1200,1100.5,30,290.6,1.0,3.2,6.5,18.2,16.0,16.5,450,445.3,7.2,380.4,false
-TEST003,29.4,42.3,950,400.6,50,240.0,1.2,4.5,8.1,22.0,18.5,17.0,400,385.0,6.5,320.0,
-TEST004,19.8,37.0,1300,1200.0,35,310.0,0.9,3.0,5.5,17.0,15.0,15.5,460,450.0,7.4,390.0, 
